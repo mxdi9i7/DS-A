@@ -17,27 +17,19 @@
  * @return {ListNode}
  */
 var reverseList = function (head) {
-  if (!head) return null;
-  let prev;
-  //   while (head) {
-  //     let next = head.next;
-  //     head.next = prev;
-  //     prev = head;
-  //     head = next;
-  //   }
-
-  //   return prev;
-
-  return appendNode(head, prev);
-};
-
-const appendNode = (curr, prev) => {
-  if (curr) {
-    let next = curr.next;
-    curr.next = prev;
-    return appendNode(next, curr);
+  if (!head) {
+    return null;
   }
+
+  let prev = null;
+
+  while (head) {
+    let next = head.next;
+    head.next = prev;
+    prev = head;
+    head = next;
+  }
+
   return prev;
 };
-
 // @lc code=end
