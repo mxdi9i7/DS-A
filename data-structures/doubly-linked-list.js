@@ -136,6 +136,7 @@ class DoublyLinkedList {
         let next = tail.next;
         if (!prev) {
           next.prev = null;
+          this.head = next;
         } else if (!next) {
           prev.next = null;
         } else {
